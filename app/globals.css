@@ -25,3 +25,34 @@ body {
     )
     rgb(var(--background-start-rgb));
 }
+
+.custom-border{
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  overflow: hidden;
+}
+
+.custom-border::before{
+  width: 150px;
+  height: 300%;
+  content: '';
+  position: absolute;
+  background: linear-gradient(#00cf, #d400d4);
+  animation: animate 4s linear infinite;
+}
+.custom-border::after{
+  content: '';
+  position: absolute;
+  inset: 4px;
+}
+
+@keyframes animate {
+  0%{
+    transform: rotate(0deg);
+  }
+  100%{
+    transform: rotate(360deg);
+  }
+}
